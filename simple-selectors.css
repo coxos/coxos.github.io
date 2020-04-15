@@ -11,3 +11,39 @@ div.asteroid{
 p.asteroid {
     background: yellow;
 }
+/********************Practice pseudo selectors***************/
+.pps div {
+    width:400px;
+    padding:25px;
+    border:2px solid ;
+    border-top:none ;
+    transition: 320ms;
+}
+.pps div:last-child{
+    border-bottom:none;
+}
+.pps div:hover {
+    background: darkorange;
+}
+/****************20 boxes******************************/
+div.box1, div.box2{
+    width:650px;
+    padding: 25px;
+    border: 2px solid #4285f4;
+    margin-bottom:10px;
+    display: flex;
+    justify-content: space-between;
+}
+ div.box1 div, div.box2 div  {
+    width:50px;
+    height: 50px;
+    background: #4285f4;
+}
+
+div.box2 {
+    background: #ff6247;
+}
+
+div.box2 div {
+    background: #643679;
+}
