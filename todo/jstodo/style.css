@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    color: #b8b8b8;
+    box-sizing: border-box;
+  }
+  main {
+    background:#50e3c1;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .container {
+    background:#f7f7f7;
+    width:300px;
+    height:290px;
+    padding:20px;
+  }
+
+  li{
+    animation : 1s ease-out 0s alternate anim; 
+  }
+
+  ul li {
+    display:flex;
+    justify-content:space-between;
+    list-style-type: none;
+    transition: 320ms;
+  
+  }
+
+  ul li p,  ul li p i  {
+    transition: 0.5s;
+
+  }
+  button, input {
+    font-size: 14px;
+    padding: 5px;
+    margin:5px 0px;
+  }
+ 
+  h1{
+    text-align: center;
+  }
+
+  li p:nth-of-type(1){
+    font-size: 14px;
+  }
+  .content-head {
+    display: flex;
+  }
+  input{
+    flex-grow: 1;
+    border: 1px solid #b8b8b8;
+    border-right: 0;
+    box-shadow: inset 0px 0px 4px 0px #b8b8b8;
+    border-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  button {
+    cursor: pointer;
+    border: 1px solid #b8b8b8;
+    border-radius: 2px;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #de69e8;
+    color:white;
+
+  }
+  ul{
+    padding:5px;
+    height: 155px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 320ms;
+  }
+
+  @keyframes anim{
+    0%{
+      text-align: center;
+      display: block;
+      transform: scale(0.0);
+      opacity: 0;
+    }
+    80%{
+      transform: scale(1.05);
+    }
+    100%{
+      text-align: center;
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    0%{
+      opacity: 1;
+      transform: scale(1);
+    }
+    20%{
+      transform: scale(1.2);
+    }
+    100%{
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
