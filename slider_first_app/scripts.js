@@ -127,4 +127,6 @@ document.querySelector('body').addEventListener('keyup',(e)=>{
         }
 });
 
-location.reload();
+location.reload(()=>{
+    document.querySelector('body').removeAttribute('style');
+});
