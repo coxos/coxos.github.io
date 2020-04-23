@@ -13,7 +13,7 @@ let data = {
     },
     2: {
         photo: './images/257_small.jpg',
-        title: 'Boo saga (The Majin Buu Saga is)',
+        title: 'Boo saga (The Majin Buu Saga )',
         description: 'The Majin Buu Saga is the fourth major plot arc from the Dragon Ball Z series. The manga volume that it is made up of is "Boo Unleashed".',
         
     },
