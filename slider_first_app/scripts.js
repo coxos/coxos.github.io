@@ -107,7 +107,10 @@ const thumb = ((pozicio) => {
         }       
          thumbDOM.innerHTML += `<div class="thum-${element} ${addCss} " data-slider-poz="${element}" style="background-image: url(${data[element].photo})"> <span> ${data[element].title} </span> </div>`;
 
-         document.querySelectorAll('.thumbnails div span')[element].style.cssText = `margin-left:-${document.querySelectorAll('.thumbnails div span')[element].offsetWidth / 2}px`;
+         setTimeout(()=>{
+            document.querySelectorAll('.thumbnails div span')[element].style.cssText = `margin-left:-${document.querySelectorAll('.thumbnails div span')[element].offsetWidth / 2}px`;
+         },100)
+
     });
 
 
