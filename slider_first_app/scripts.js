@@ -106,13 +106,11 @@ const thumb = ((pozicio) => {
             addCss = '';
         }       
          thumbDOM.innerHTML += `<div class="thum-${element} ${addCss} " data-slider-poz="${element}" style="background-image: url(${data[element].photo})"> <span> ${data[element].title} </span> </div>`;
+
+         document.querySelectorAll('.thumbnails div span')[element].style.cssText = `margin-left:-${document.querySelectorAll('.thumbnails div span')[element].offsetWidth / 2}px`;
     });
 
-   document.querySelectorAll('.thumbnails div span').forEach((element) => {
-      //console.log( 'asdasd'+element.offsetWidth);
-      
-        element.style.cssText = `margin-left:-${element.offsetWidth / 2}px`;
-   });
+
 
 });
 thumb(0);
