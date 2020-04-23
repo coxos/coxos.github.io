@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --after-bg: 'url(https://i.pinimg.com/originals/ef/ab/1d/efab1df83cc569cbb9bd3880ed162859.jpg)';
+    --slider-direction : 850px;
+    --span-tool :0px;
+  }
+
+body{
+    font-size: 14px;
+background: linear-gradient(to right, #bfbfbf 0%,#f0f0f0 28%,#ececec 50%,#ddd 72%,#bfbfbf 100%); 
+}
+main{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 950px;
+}
+.slider{
+    width: 950px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;;
+    box-shadow: 0px 5px 6px 2px #00000069;
+    background: white;
+}
+.left, .right {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.left img, .right img {
+    cursor: pointer;
+}
+.right {
+    transform: rotate(180deg);
+}
+.slider-image{
+    width:850px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+}
+.slider-image.active_slide::after{
+/* .slider-image::after{ */
+    content: '';
+    width: 850px;
+    top:0;
+    height: 100%;
+    background-image: var(--after-bg);
+    background-position-x: 0px;
+    background-size: 100%;
+
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 4;
+    animation: 1s linear running both slider_effect;
+}
+
+h1,h2{
+    margin-bottom: 5px;
+}
+.image-desc-bg{
+    background-color:#000000c9;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+
+}
+
+.image-desc-bg p {
+    color: #b5b5b5;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+
+}
+.thumbnails div{
+    padding: 5px;
+    margin: 25px 10px;
+    width: 50px;
+    height: 50px;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 4px;
+    border-image-source: linear-gradient(to top, #d3d3d3, #fdfdfd);
+    box-shadow: 0px 14px 4px -11px #00000091;
+    transition: 320ms;
+    border-radius: 5px;
+    z-index: 5;
+    background-clip: padding-box;
+    cursor: pointer;
+}
+
+.thumbnails div::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -10px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+   
+}
+
+
+.thumbnails div.active {
+
+    box-shadow: 0px 14px 4px -11px #00000091 , 
+                0px 14px 7px -6px #00000091;
+    transform: translate(0px, -6px);
+    cursor: initial;
+}
+.thumbnails div.active::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -11px;
+    margin-left: -8px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 8px 8px 8px;
+    border-color: #0000 #0000 #fff #0000;
+    width: 0 !important;
+}
+
+.thumbnails div span{
+    font-size: 12px;
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    margin-top: -38px;
+    background-color: black;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    z-index: 999999999999999999;
+    width: max-content;
+    left: 50%;
+    margin-left: var(--span-tool);
+}
+.thumbnails div.active:hover span{
+    display: none!important;
+}
+
+.thumbnails div:hover span {
+    visibility: visible;
+    
+}
+.thumbnails span::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top:25px;  
+   margin-left: -5px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 5px 5px 0px 5px;
+    border-color: black transparent #0000 transparent;
+    width: 0!important;
+}
+
+@keyframes slider_effect{
+    0%{ 
+        background-position-x: 0px 
+    }
+    100% {
+        background-position-x: var(--slider-direction); 
+    }
+}
